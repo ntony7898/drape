@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#0b0b0d"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Drape — 3D cloth studio (test build)</title>
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon.svg"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head><body>
+<canvas id="c"></canvas>
+<header class="top">
+  <div class="brand"><img src="icons/icon.svg" alt=""><b id="appName">Drape</b><span class="chip">TEST</span></div>
+  <div class="tb"><button id="undo" aria-label="Undo">↶</button><button id="redo" aria-label="Redo">↷</button><button id="wardBtn" aria-label="Wardrobe">▦</button><button id="setBtn" aria-label="Settings">⚙</button></div>
+</header>
+<div class="fab" id="fab">
+  <button id="windBtn" aria-pressed="false" title="Wind"><b>≋</b><span>Wind</span></button>
+  <button id="shakeBtn" title="Shake"><b>✺</b><span>Shake</span></button>
+  <button id="dropBtn" title="Re-drape"><b>↧</b><span>Drape</span></button>
+  <button id="saveBtn" title="Save to wardrobe"><b>＋</b><span>Save</span></button>
+</div>
+<div id="modeChip" class="modechip" hidden></div>
+<div id="hint" class="hint" hidden><div><b>Welcome to the studio</b><p>☝ Drag the background to orbit · pinch to zoom<br>✋ Drag the fabric to grab &amp; pull it<br>⤢ Double-tap to reset the view</p><button id="hintOk">Let's design</button></div></div>
+<section id="sheet" class="sheet" aria-hidden="true"><div class="grip"></div><div id="pane"></div></section>
+<nav class="tabs" id="tabs">
+  <button data-t="garment"><b>👕</b>Garment</button><button data-t="fabric"><b>◐</b>Fabric</button><button data-t="design"><b>✎</b>Design</button><button data-t="fit"><b>⇕</b>Fit</button><button data-t="stage"><b>★</b>Stage</button>
+</nav>
+<div id="runway" class="runway" hidden><div class="rtop"><span id="recDot" class="rec" hidden>● REC</span><span id="rwTitle">RUNWAY</span><button id="rwExit">Exit</button></div>
+  <div class="rbot"><button id="rwRec" class="big">● Record 8s</button><button id="rwSnap">Photo</button></div></div>
+<div id="modal" class="modal" hidden><div class="mcard"><button class="mx" id="mx" aria-label="Close">✕</button><div id="mbody"></div></div></div>
+<div id="toast" class="toast" role="status"></div>
+<script type="module" src="app.js"></script>
+</body></html>
